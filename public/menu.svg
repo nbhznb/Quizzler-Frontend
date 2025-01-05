@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="menu-icon" viewBox="0 0 800 600">
+    <g>
+      <line
+        stroke-width="99"
+        y2="100"
+        x2="700.3333"
+        y1="100"
+        x1="85.33332"
+        stroke="currentColor"
+        fill="none"
+      />
+      <line
+        y2="300"
+        x2="650"
+        y1="300"
+        x1="85.33332"
+        stroke-width="99"
+        stroke="currentColor"
+        fill="none"
+      />
+      <line
+        y2="500"
+        x2="600"
+        y1="500"
+        x1="85"
+        stroke-width="99"
+        stroke="currentColor"
+        fill="none"
+      />
+    </g>
+  </symbol>
+</svg>

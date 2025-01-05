@@ -1,0 +1,104 @@
+@import './styles/custom-components.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    font-size: 16px;
+    color-scheme: light dark;
+    color: theme('colors.navy-blue');
+    background-color: theme('colors.powder');
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  @media (min-width: 768px) {
+    :root {
+      font-size: 20px;
+    }
+  }
+
+  body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 320px;
+    height: 100vh;
+    overflow: hidden;
+    @apply text-xs md:text-sm lg:text-base;
+  }
+
+  .btn {
+    @apply text-xs md:text-sm lg:text-base;
+  }
+
+  .floating-input {
+    @apply text-[0.65rem] md:text-sm lg:text-base;
+  }
+
+  .floating-label {
+    @apply text-[0.65rem] md:text-sm lg:text-base;
+  }
+}
+
+@layer components {
+  .sign {
+    @apply block w-[80vw] h-auto bg-base-100 shadow-md border border-neutral rounded-lg p-5 text-center;
+  }
+
+  .inputFields {
+    @apply flex flex-col items-center;
+  }
+
+  .buttonFields {
+    @apply flex justify-center items-center;
+  }
+
+  .inputBox {
+    @apply w-4/5 relative;
+  }
+
+  .inputBox input {
+    @apply w-full py-2.5 text-sm text-neutral border-none border-b-2 border-neutral outline-none bg-transparent mb-8;
+  }
+
+  .inputBox label {
+    @apply absolute text-sm top-0 left-0 pointer-events-none transition-transform duration-500;
+  }
+
+  .inputBox input:focus ~ label,
+  .inputBox input:valid ~ label {
+    @apply -translate-y-5 text-sm;
+  }
+
+  .togglePassword {
+    @apply w-[70%] flex items-center gap-2 text-xs ml-[9%];
+  }
+
+  .error {
+    @apply text-red-700 text-sm my-2.5;
+  }
+
+  .success {
+    @apply text-green-600 text-sm my-2.5;
+  }
+
+  .password-strength-meter {
+    @apply w-full h-1 bg-gray-200 rounded-full overflow-hidden mt-1;
+  }
+
+  .password-strength-segment {
+    @apply h-full transition-all duration-300;
+  }
+
+  .password-strength-text {
+    @apply text-xs mt-1 text-right transition-colors duration-300;
+  }
+}

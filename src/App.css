@@ -1,0 +1,172 @@
+#root {
+  max-width: 100%;
+  max-height: 100vh;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* button {
+  margin: 10px;
+} */
+
+
+.sign {
+  display: block; /* Change from flex to block */
+  width: 80vw;
+  height: auto; /* Adjust height to auto */
+  background-color: #F9FAF8;
+  box-shadow: 0px 0px 5px 1px #3d5a80;
+  border: 1px;
+  border-radius: 8px;
+  padding: 20px; /* Add padding for better spacing */
+  text-align: center; /* Center align the content */
+}
+
+.sign h2 {
+  margin: 20px;
+}
+
+.inputFields {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.buttonFields {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.inputBox {
+  width: 80%;
+  position: relative;
+}
+
+.inputBox input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 0.8em;
+  color: #333;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 2px solid #333;
+  outline: none;
+  background: transparent;
+}
+
+.inputBox label {
+  position: absolute;
+  font-size: 0.8em;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.inputBox input:focus ~ label,
+.inputBox input:valid ~ label {
+  transform: translateY(-20px);
+  font-size: 14px;
+}
+
+.submitInput {
+  width: 30%;
+  white-space: nowrap;
+  margin: 3%;
+  padding: 10px 10px;
+  border: 1px solid #3d5a80; /* Ensure border is applied */
+  border-radius: 5px;
+  font-size: 0.8em;
+  background-color: #60A3D9;
+  color: #fdfdff;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none; /* Remove underline from links */
+  display: inline-block; /* Ensure links are displayed as inline blocks */
+  box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+
+.submitInput:hover {
+  background-color: #0074B7; /* Optional: Add hover effect */
+}
+
+/* Custom checkbox styling */
+.togglePassword {
+  width: 70%;
+  display: flex;
+  align-items: center; /* Center items vertically */
+  gap: 8px; /* Add space between checkbox and label */
+  font-size: 0.7em;
+  margin-left: 9%;
+}
+
+.togglePassword input[type="checkbox"] {
+  /* Hide the default checkbox */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  /* Custom styling */
+  width: 16px;
+  height: 16px;
+  border: 2px solid #60A3D9;
+  border-radius: 3px;
+  margin: 0;
+  cursor: pointer;
+  position: relative;
+  background-color: #F9FAF8;
+}
+
+/* Checked state */
+.togglePassword input[type="checkbox"]:checked {
+  background-color: #60A3D9;
+}
+
+/* Create checkmark */
+.togglePassword input[type="checkbox"]:checked::after {
+  content: '✓';
+  position: absolute;
+  color: white;
+  font-size: 12px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Focus state */
+.togglePassword input[type="checkbox"]:focus {
+  outline: 2px solid #60A3D9;
+  outline-offset: 2px;
+}
+
+/* Hover state */
+.togglePassword input[type="checkbox"]:hover {
+  border-color: #408AC7;
+}
+
+
+.error {
+  color: #950606;
+  font-size: 14px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.success {
+  color: #50C878;
+  font-size: 14px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+
+/* Media query for desktop */
+@media (min-width: 768px) {
+  .sign {
+    width: 30vw;
+  }
+}

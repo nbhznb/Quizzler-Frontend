@@ -1,0 +1,179 @@
+@layer components {
+  /* Navbar Components */
+  .navbar-container {
+    @apply flex justify-between items-center w-full;
+  }
+
+  .navbar-menu {
+    @apply flex items-center;
+  }
+
+  .navbar-brand {
+    @apply relative flex items-center cursor-pointer;
+  }
+
+  .navbar-logo {
+    @apply h-8 mr-1;
+  }
+
+  .navbar-tooltip {
+    @apply invisible w-30 bg-black text-white text-center rounded-lg p-1 absolute z-10 -bottom-full left-1/2 -translate-x-1/2 opacity-0 transition-opacity duration-300;
+  }
+
+  /* Form Components */
+  .form-input-box {
+    @apply w-4/5 relative mb-8;
+  }
+
+  .form-input {
+    @apply w-full py-2.5 text-sm text-neutral border-none border-b-2 border-neutral outline-none bg-transparent;
+  }
+
+  .form-label {
+    @apply absolute text-sm top-0 left-0 pointer-events-none transition-transform duration-500;
+  }
+
+  .form-checkbox {
+    @apply w-4 h-4 border-2 border-primary rounded cursor-pointer relative bg-powder appearance-none;
+  }
+
+  .form-checkbox:checked {
+    @apply bg-primary;
+  }
+
+  .form-checkbox:checked::after {
+    content: '✓';
+    @apply absolute text-white text-xs left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2;
+  }
+
+  .form-checkbox:focus {
+    @apply outline-2 outline-primary outline-offset-2;
+  }
+
+  .form-checkbox:hover {
+    @apply border-primary-focus;
+  }
+
+  /* Button Components */
+  .btn-custom {
+    @apply btn btn-primary normal-case text-base-100 min-h-0 h-auto px-6 py-3;
+  }
+
+  .btn-danger {
+    @apply btn bg-danger hover:bg-danger-hover text-white border-none;
+  }
+
+  .btn-primary-custom {
+    @apply btn bg-primary hover:bg-primary-focus text-white border-none normal-case;
+  }
+
+  .btn-outline-custom {
+    @apply btn bg-transparent hover:bg-primary/10 text-primary border-2 border-primary normal-case;
+  }
+
+  .btn-ghost-custom {
+    @apply btn bg-transparent hover:bg-primary text-primary hover:text-white border-2 border-primary normal-case;
+  }
+
+  /* Layout Components */
+  .sign-container {
+    @apply w-mobile-sign md:w-desktop-sign bg-powder shadow-card rounded-lg p-5 text-center;
+  }
+
+  .quiz-container {
+    @apply flex flex-col items-center justify-center min-h-screen-minus-navbar overflow-hidden;
+  }
+
+  /* Category Selection styling */
+  #quiz .dropdown button {
+    @apply btn btn-primary normal-case m-1 px-6 min-h-0 h-auto py-3;
+  }
+
+  #quiz .dropdown-content {
+    @apply z-[1] menu p-2 shadow-lg bg-powder rounded-lg w-52 mt-2;
+  }
+
+  #quiz .dropdown-content button {
+    @apply btn btn-ghost normal-case w-full text-left justify-start hover:bg-primary/10;
+  }
+
+  /* Navbar Category Selection styling */
+  #navbar .dropdown .dropdown {
+    display: block;
+  }
+
+  #navbar .dropdown .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  #navbar .dropdown .dropdown button {
+    @apply btn bg-powder text-primary hover:bg-primary hover:text-powder normal-case w-full justify-between;
+  }
+
+  #navbar .dropdown .dropdown button::after {
+    content: '▸';
+  }
+
+  #navbar .dropdown .dropdown-content {
+    @apply menu p-2 shadow-lg bg-powder rounded-lg w-52;
+    position: absolute;
+    right: -13rem;
+    top: 0;
+    display: none;
+  }
+
+  #navbar .dropdown .dropdown-content button {
+    @apply btn bg-powder text-primary hover:bg-primary hover:text-powder normal-case w-full justify-start;
+  }
+
+  /* Floating Label Input Components */
+  .floating-input-group {
+    @apply relative w-4/5;
+  }
+
+  .floating-input {
+    @apply w-full py-2.5 text-[0.65rem] md:text-sm text-neutral bg-transparent
+           border-0 border-b-2 border-neutral
+           outline-none focus:border-primary focus:ring-0
+           transition-colors;
+  }
+
+  .floating-label {
+    @apply absolute left-0 top-2.5 text-[0.65rem] md:text-sm text-neutral
+           pointer-events-none transform transition-all duration-300
+           origin-left;
+  }
+
+  .floating-input:focus ~ .floating-label,
+  .floating-input:not(:placeholder-shown) ~ .floating-label {
+    @apply -translate-y-6 scale-90 text-primary;
+  }
+}
+
+@layer utilities {
+  .input-focus {
+    @apply focus:-translate-y-5 focus:text-sm;
+  }
+
+  .checkbox-checked {
+    @apply checked:bg-primary checked:after:content-['✓'] checked:after:absolute checked:after:text-white checked:after:text-xs checked:after:left-1/2 checked:after:top-1/2 checked:after:-translate-x-1/2 checked:after:-translate-y-1/2;
+  }
+
+  @screen md {
+    .sign-container {
+      @apply w-desktop-sign;
+    }
+  }
+
+  @media (orientation: landscape) {
+    .login-button {
+      @apply w-1/3;
+    }
+  }
+
+  @media (orientation: portrait) {
+    .login-button {
+      @apply max-w-[30%] text-xs font-medium p-2;
+    }
+  }
+}
