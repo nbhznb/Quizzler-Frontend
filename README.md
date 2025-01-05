@@ -1,7 +1,5 @@
 # The Quizzler - Frontend
 
-#### Video Demo: [YouTube](https://www.youtube.com/watch?v=iu32-lUfnr4)
-
 #### Description:
 
 The Quizzler is an interactive web application designed to provide users with an engaging platform to test and enhance their knowledge across various subjects. This repository contains the **frontend** of the application, built using **React**, **Tailwind CSS**, and **Redux**. The frontend communicates with a backend API to handle user authentication, quiz data, and score tracking.
